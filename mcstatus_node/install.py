@@ -2,6 +2,7 @@
 
 import sys
 import shlex
+import time
 from subprocess import PIPE, Popen
 
 def run(cmd):
@@ -41,6 +42,7 @@ def main():
         f.write(conf)
     run("supervisorctl reread")
     run("supervisorctl update")
+    time.sleep(1000)
     run("supervisorctl status")
 
 if __name__ == "__main__":
