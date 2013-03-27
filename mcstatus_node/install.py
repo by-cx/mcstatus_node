@@ -35,7 +35,7 @@ stderr_events_enabled=false
 """
 
 def main():
-    run("apt-get install -y python python-pip supervisord")
+    run("apt-get install -y python python-pip supervisor")
     run("pip install bottle")
     with open("/etc/supervisor/conf.d/mcstatus.conf", "w") as f:
         f.write(conf)
