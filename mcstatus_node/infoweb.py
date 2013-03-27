@@ -19,8 +19,8 @@ def info():
     load = get_load()
     
     data = {
-        "memory": memory["memory"],
-        "memory_max": memory["memory_max"],
+        "memory": int(memory["memory"]),
+        "memory_max": int(memory["memory_max"]),
         "cpu_count": cpu["cpu_count"],
         "load1": load[0],
         "load5": load[1],
