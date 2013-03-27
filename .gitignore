@@ -1,0 +1,5 @@
+*.pyc
+*.pyo
+build/
+dist/
+mcstatus_node.egg-info/
