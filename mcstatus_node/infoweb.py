@@ -78,7 +78,7 @@ def get_cpus():
     return data
 
 def main():
-    run(host='193.150.12.34', port=5000)
+    run(host='0.0.0.0', port=5000)
 
 if __name__ == "__main__":
      main()
