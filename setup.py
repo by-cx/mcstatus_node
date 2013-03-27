@@ -19,5 +19,6 @@ setup(
     entry_points="""
     [console_scripts]
     mcstatus_node = mcstatus_node.infoweb:main
+    mcstatus_node_install = mcstatus_node.install:main
     """
 )
