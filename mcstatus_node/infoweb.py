@@ -1,5 +1,6 @@
 # coding: utf-8
 
+import os
 import sys
 import json
 import shlex
@@ -32,10 +33,16 @@ def info():
 def get_port():
     port = 0
     try:
-        with open("/home/bukkit/server.properties") as f:
-            for line in f.readlines():
-                if "server-port" in line:
-                    port = int(line.strip().split("=")[1])
+        path = ""
+        if os.path.isfile("/home/bukkit/server.properties")
+            path = "/home/bukkit/server.properties"
+        elif os.path.isfile("/home/minecraft/server.properties")
+            path = "/home/minecraft/server.properties"
+        if path:
+            with open(path) as f:
+                for line in f.readlines():
+                    if "server-port" in line:
+                        port = int(line.strip().split("=")[1])
     except IOError:
         pass
     return port
