@@ -33,11 +33,17 @@ def info():
 def get_port():
     port = 0
     try:
-        path = ""
-        if os.path.isfile("/home/bukkit/server.properties"):
-            path = "/home/bukkit/server.properties"
-        elif os.path.isfile("/home/minecraft/server.properties"):
-            path = "/home/minecraft/server.properties"
+        paths = (
+            "/home/bukkit/server.properties",
+            "/home/minecraft/game/server.properties",
+            "/home/minecraft/server.properties",
+            "/home/tekkit/server.properties",
+            "/home/tekkit_lite/server.properties",
+        )
+        existed_path = None
+        for path in paths:
+            if os.path.isfile(path):
+                existed_path = path
         if path:
             with open(path) as f:
                 for line in f.readlines():
