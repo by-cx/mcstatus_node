@@ -34,9 +34,9 @@ def get_port():
     port = 0
     try:
         path = ""
-        if os.path.isfile("/home/bukkit/server.properties")
+        if os.path.isfile("/home/bukkit/server.properties"):
             path = "/home/bukkit/server.properties"
-        elif os.path.isfile("/home/minecraft/server.properties")
+        elif os.path.isfile("/home/minecraft/server.properties"):
             path = "/home/minecraft/server.properties"
         if path:
             with open(path) as f:
