@@ -44,8 +44,9 @@ def get_port():
         for path in paths:
             if os.path.isfile(path):
                 existed_path = path
-        if path:
-            with open(path) as f:
+                break
+        if existed_path:
+            with open(existed_path) as f:
                 for line in f.readlines():
                     if "server-port" in line:
                         port = int(line.strip().split("=")[1])
