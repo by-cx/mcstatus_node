@@ -19,10 +19,10 @@ def run(cmd):
 conf = """
 [program:mcstatus_node]
 command=mcstatus_node
-directory=/
+directory=/home
 process_name=mcstatus_node
-user=nobody
-group=nogroup
+user=minecraft
+group=minecraft
 stdout_logfile=/tmp/mcstatus_stdout.log
 stdout_logfile_maxbytes=2MB
 stdout_logfile_backups=5
